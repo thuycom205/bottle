@@ -159,7 +159,7 @@
 				<div class="col-sm-24 col-md-8">
                     <!--Aiden implement google look up address feature-->
                     <div id="locationField">
-                        <input id="autocomplete" placeholder="Enter your address" onfocus="geolocate()" type="text" autocomplete="off">
+                        <input id="autocomplete" placeholder="Enter your address(Google autocomplete address form)" onfocus="geolocate()" type="text" autocomplete="off">
                     </div>
 
                     <!--End of google look up-->
@@ -563,6 +563,13 @@ table#shopping-cart-table th, table#shopping-cart-table th span, table#shopping-
 table#shopping-cart-table td a.btn-remove, table#shopping-cart-table td a.btn-remove2{
   font-size: 0 !important;
 }
+
+div#locationField {
+    padding: 0 20px;
+}
+input#autocomplete {
+    width: 100%;
+}
 </style>
 
 <!--Google address look up-->
@@ -619,7 +626,13 @@ table#shopping-cart-table td a.btn-remove, table#shopping-cart-table td a.btn-re
                // document.getElementById(addressType).value = val;
 
                 //country
-                if (addressType == 'country')  document.getElementById(addressType).value = val;
+                if (addressType == 'country')  {
+                   // document.getElementById(addressType).value = val;
+                    jQuery('#country').find("option").filter(function(){
+                        return ( (jQuery(this).val() == val) || (jQuery(this).text() == val) )
+                    }).prop('selected', true);
+                }
+
                 if (addressType == 'locality')  document.getElementById('city').value = val;
                 if (addressType == 'postal_code')  document.getElementById('postcode').value = val;
             }
