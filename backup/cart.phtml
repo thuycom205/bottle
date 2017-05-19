@@ -184,24 +184,7 @@
 						<?php endif; ?>
 						<?php endforeach; ?>
 					</ul>
-
-                    <ul id="cartSymbolAnchor" style="display:none">
-                        <li><img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/visa.png"
-                                 alt="visa"></li>
-                        <li>
-                            <img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/master-card.png"
-                                 alt="master-card"></li>
-                        <li>
-                            <img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/american-express.png"
-                                 alt="american-express"></li>
-                        <li>
-                            <img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/paypal.png"
-                                 alt="paypal"></li>
-                        <li class="nbsp"><img
-                                    src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/ssl.png"><span>SSL Secure Payments</span>
-                        </li>
-                    </ul>
-                </div>
+				</div>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -216,21 +199,6 @@
 </div>
 
 <script>
-    var processToCheckoutLi = jQuery('#totals-wrapper').find('.checkout-types').find('li').last();
-    var cartSymbolHtml = jQuery('#cartSymbolAnchor').html();
-
-    processToCheckoutLi.prepend(cartSymbolHtml);
-
-    var liPaypal = jQuery('#totals-wrapper').find('.checkout-types').find('li').filter(function (index, elemement) {
-        var paypalLogo = jQuery(this).find('.paypal-logo');
-        if (paypalLogo.length > 0) {
-            return this;
-        }
-    });
-
-    liPaypal.addClass('checkout-paypal');
-
-
     var button = jQuery(".qty-ctl").find('.increase');
 
     button.on('click', function (e) {
