@@ -186,19 +186,26 @@
 					</ul>
 
                     <ul id="cartSymbolAnchor" style="display:none">
-                        <li><img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/visa.png"
-                                 alt="visa"></li>
                         <li>
-                            <img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/master-card.png"
+                            <img src="<?php echo $this->getSkinUrl('images/cart/visa.png') ?>"
+                                 alt="visa">
+                        </li>
+                        <li>
+                            <img src="<?php echo $this->getSkinUrl('images/cart/master-card.png') ?>"
                                  alt="master-card"></li>
                         <li>
-                            <img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/american-express.png"
-                                 alt="american-express"></li>
+                            <img
+                                    src="<?php echo $this->getSkinUrl('images/cart/american-express.png') ?>"
+                                    alt="american-express"></li>
                         <li>
-                            <img src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/paypal.png"
-                                 alt="paypal"></li>
-                        <li class="nbsp"><img
-                                    src="https://www.mybottleshop.com.au/skin/frontend/em0140/default/images/cart/ssl.png"><span>SSL Secure Payments</span>
+                            <img
+                                    src="<?php echo $this->getSkinUrl('images/cart/paypal.png') ?>"
+                                    alt="paypal"></li>
+                        <li class="nbsp">
+                            <img
+                                    src="<?php echo $this->getSkinUrl('images/cart/ssl.png') ?>"
+                            >
+                            <span>SSL Secure Payments</span>
                         </li>
                     </ul>
                 </div>
@@ -542,7 +549,11 @@ table#shopping-cart-totals-table td span{
 	text-align: right;
 
 }
-
+.em-main-container.em-col1-layout ul.checkout-types li.checkout-paypal {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+}
 .checkout-cart-index  .em-main-container.em-col1-layout ul.checkout-types li.checkout-paypal:after{
 
 	content: " ";
@@ -581,15 +592,6 @@ table#shopping-cart-totals-table td span{
 
 }
 
-.checkout-cart-index  .em-main-container.em-col1-layout ul.checkout-types li:nth-last-child(5){
-
-    position: absolute;
-
-    bottom: 10px;
-
-    right: 20px;
-
-}
 
 table#shopping-cart-table th, table#shopping-cart-table th span, table#shopping-cart-table th p, table#shopping-cart-table td, table#shopping-cart-table td a,table#shopping-cart-table td p,table#shopping-cart-table td span{ font-size: 15px !important}
 table#shopping-cart-table td a.btn-remove, table#shopping-cart-table td a.btn-remove2{
